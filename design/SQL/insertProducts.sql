@@ -1,0 +1,14 @@
+INSERT INTO products (product_name, product_price, product_type, product_description, product_image)
+VALUES 
+("HP Elite Laptop", 399.99, "computer", "Powered By Intel's Core i3 Processor, 8GB Of Ram & 1 TB of Hard Drive space, you can store all of the apps, games, photos, music and movies that you need.", "../lib/img/product1.jpg"),
+("Viper V730 Mechanical Gaming Keyboard", 57.66, "keyboard", "LED backlit keys with 5 lighting profiles. 104 key rollover anti-ghosting and 8 multimedia control keys", "../lib/img/product4.jpg"),
+("Samsung EV-NX500ZBMIUS Camera", 495, "camera", "New 28MP Back Side Illuminated APS-C Sensor. The NX AF System III on the NX500 is supported by 205 phase detect auto focus points", "../lib/img/product12.jpg"),
+("Canon PowerShot SX530 Camera", 259.95, "camera", "Powerful 50x Optical Zoom (24-1200mm) Large 3.0-inch LCD with a screen resolution of 461,000 dots allows easy viewing even from a wide angle", "../lib/img/product11.jpg"),
+("Havit Wired Gaming Keyboard", 29.99, "keyboard", "Including a 7 Colorful Circular Breathing LED Gaming Mouse and a Rainbow Backlit Gaming Keyboard", "../lib/img/product5.jpg"),
+("Gateway ZX4951-33e", 185, "computer", "Intel Core i3-550 3.2 GHz dual-core processor. 4 MB Intel Smart Cache, 2.5 GT/s DMI, Intel Hyper-Threading Technology", "../lib/img/product2.jpg"),
+("Canon PIXMA MG3620 Printer", 39.99, "printer", "Easily print from your iPhone, iPad, Android or tablet ; High Resolution: 4800 x 1200 maximum color dpi produces incredible quality and detail.", "../lib/img/product9.jpg"),
+("VicTsing USB Wired Keyboard", 28.99, "keyboard", "Vic Tsing gaming keyboard panel adopts all metal materials, shockproof and wear-resistant. The skin-like rubber oil coating on it adds a delicate feeling.", "../lib/img/product6.jpeg"),
+("Epson EcoTank Printer", 349.99, "printer", "Less waste with Cartridge-Free Printing — one set of replacement bottles equivalent to about 80 individual cartridges (4); means fewer trips to the store.", "../lib/img/product7.jpg"),
+("Dell Optiplex 990 SFF PC", 263.50, "computer", "Intel Core i5 Processor, 16GB RAM, 2TB HDD, DVDRW, Keyboard & Mouse, Wi-Fi, Bluetooth 4.0, Windows 10 Home, 20in LCD Monitor", "../lib/img/product3.webp"),
+("Canon EOS Rebel T7 DSLR Camera", 429.99, "camera", "24.1 Megapixel CMOS (APS-C) Sensor with ISO 100-6400 (H: 12800) | DIGIC 4+ Image Processor | Continuous Shooting at up to 3.0 fps", "../lib/img/product10.jpg"),
+("HP OfficeJet 3830 Printer", 49.89, "printer", "Main functions of this HP color inkjet photo printer: copy, scan, fax, wireless printing, AirPrint, touchscreen, Instant Ink ready so you'll never run out of ink, and more", "../lib/img/product8.jpg");
