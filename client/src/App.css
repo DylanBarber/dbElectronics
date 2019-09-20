@@ -1,56 +1,74 @@
-.appContainer {
+.homeText {
+  margin-bottom: 220px;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+}
+.dropdownButton {
+  background-color: #4285f4;
+  margin-top: 20px;
+  color: white;
+}
+.formErrorsFoundWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  background-color: rgba(215, 44, 44, 0.5);
+  margin-top: 30px;
 }
-.title {
-  margin: 10px;
-}
-input { 
-  font-size: 32px;
-  margin: 10px;
-  border-radius: 15px;
-  border: 0px;
-  box-shadow: 0px 0px 10px black;
-}
-button {
-  background-color: lightblue;
-  font-size: 18px;
-  margin: 10px;
-  border-radius: 15px;
-  border: 0;
-  box-shadow: 0px 0px 10px grey;
-}
-.weatherInfoDiv {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-}
-.weatherCard {
+.formSubmittedDiv {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  /* border: 1px solid black; */
-  padding: 20px;
-  margin: 30px;
-  min-width: 100px;
-  min-height: 350px;
-  max-width: 100px;
-  max-height: 350px;
-  border-radius: 20px;
-  box-shadow: 0px 0px 20px black;
+  width: 100%;
+  background-color: rgba(0, 255, 0, 0.5);
+  margin-top: 30px;
 }
-i {
-  font-size: 70px;
-  margin: 20px;
+.formSubmittedDiv p {
+  margin-top: 10px;
 }
-h1, h2 {
-  margin: 0;
+.contactFormDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-h2 {
-  min-height: 56px;
+@media (min-width: 1025px){
+  .card {
+    max-height: 515px;
+    max-width: 350px;
+    min-height: 515px;
+    min-width: 350px;
+  }
 }
-h1 {
-  margin-top: 15px;
+@media (max-width: 1025px) {
+  .card {
+    max-height: 515px;
+    max-width: 300px;
+    min-height: 515px;
+    min-width: 300px;
+  }
+}
+@media (max-width: 768px){
+  .card {
+    max-height: 515px;
+    max-width: 225px;
+    min-height: 515px;
+    min-width: 225px;
+  }
+}
+@media (max-width: 420px){
+  .card {
+    max-height: 600px;
+    max-width: 380px;
+    min-height: 600px;
+    min-width: 380px;
+
+  }
+}
+
+.card-body {
+  padding: 1.5rem;
 }

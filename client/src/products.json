@@ -1,0 +1,100 @@
+{
+  "products": [
+    {
+      "productName": "HP Elite Laptop",
+      "productPrice": "399.99",
+      "productType": "computer",
+      "productDescription": "Powered By Intel's Core i3 Processor, 8GB Of Ram & 1 TB of Hard Drive space, you can store all of the apps, games, photos, music and movies that you need.",
+      "productImage": "../lib/img/product1.jpg",
+      "productImageAlt": "HP Laptop"
+    },
+    {
+      "productName": "Viper V730 Mechanical Gaming Keyboard",
+      "productPrice": "57.66",
+      "productType": "keyboard",
+      "productDescription": "LED backlit keys with 5 lighting profiles. 104 key rollover anti-ghosting and 8 multimedia control keys",
+      "productImage": "../lib/img/product4.jpg",
+      "productImageAlt": "Mechanical Keyboard"
+    },
+    {
+      "productName": "Samsung EV-NX500ZBMIUS Camera",
+      "productPrice": "495",
+      "productType": "camera",
+      "productDescription": "New 28MP Back Side Illuminated APS-C Sensor. The NX AF System III on the NX500 is supported by 205 phase detect auto focus points",
+      "productImage": "../lib/img/product12.jpg",
+      "productImageAlt": "Samsung Camera"
+    },
+    {
+      "productName": "Canon PowerShot SX530 Camera",
+      "productPrice": "259.95",
+      "productType": "camera",
+      "productDescription": "Powerful 50x Optical Zoom (24-1200mm) Large 3.0-inch LCD with a screen resolution of 461,000 dots allows easy viewing even from a wide angle",
+      "productImage": "../lib/img/product11.jpg",
+      "productImageAlt": "Canon Camera"
+    },
+    {
+      "productName": "Havit Wired Gaming Keyboard",
+      "productPrice": "29.99",
+      "productType": "keyboard",
+      "productDescription": "Including a 7 Colorful Circular Breathing LED Gaming Mouse and a Rainbow Backlit Gaming Keyboard",
+      "productImage": "../lib/img/product5.jpg",
+      "productImageAlt": "Gaming Keyboard"
+    },
+    {
+      "productName": "Gateway ZX4951-33e",
+      "productPrice": "185",
+      "productType": "computer",
+      "productDescription": "Intel Core i3-550 3.2 GHz dual-core processor. 4 MB Intel Smart Cache, 2.5 GT/s DMI, Intel Hyper-Threading Technology",
+      "productImage": "../lib/img/product2.jpg",
+      "productImageAlt": "Gateway Computer"
+    },
+    {
+      "productName": "Canon PIXMA MG3620 Printer",
+      "productPrice": "39.99",
+      "productType": "printer",
+      "productDescription": "Easily print from your iPhone, iPad, Android or tablet ; High Resolution: 4800 x 1200 maximum color dpi produces incredible quality and detail.",
+      "productImage": "../lib/img/product9.jpg",
+      "productImageAlt": "Canon Printer"
+    },
+    {
+      "productName": "VicTsing USB Wired Keyboard",
+      "productPrice": "28.99",
+      "productType": "keyboard",
+      "productDescription": "Vic Tsing gaming keyboard panel adopts all metal materials, shockproof and wear-resistant. The skin-like rubber oil coating on it adds a delicate feeling.",
+      "productImage": "../lib/img/product6.jpeg",
+      "productImageAlt": "Wired Keyboard"
+    },
+    {
+      "productName": "Epson EcoTank Printer",
+      "productPrice": "349.99",
+      "productType": "printer",
+      "productDescription": "Less waste with Cartridge-Free Printing — one set of replacement bottles equivalent to about 80 individual cartridges (4); means fewer trips to the store.",
+      "productImage": "../lib/img/product7.jpg",
+      "productImageAlt": "Epson Printer"
+    },
+    {
+      "productName": "Dell Optiplex 990 SFF PC",
+      "productPrice": "263.50",
+      "productType": "computer",
+      "productDescription": "Intel Core i5 Processor, 16GB RAM, 2TB HDD, DVDRW, Keyboard & Mouse, Wi-Fi, Bluetooth 4.0, Windows 10 Home, 20in LCD Monitor",
+      "productImage": "../lib/img/product3.webp",
+      "productImageAlt": "Dell Computer"
+    },
+    {
+      "productName": "Canon EOS Rebel T7 DSLR Camera",
+      "productPrice": "429.99",
+      "productType": "camera",
+      "productDescription": "24.1 Megapixel CMOS (APS-C) Sensor with ISO 100-6400 (H: 12800) | DIGIC 4+ Image Processor | Continuous Shooting at up to 3.0 fps",
+      "productImage": "../lib/img/product10.jpg",
+      "productImageAlt": "Canon DSLR Camera"
+    },
+    {
+      "productName": "HP OfficeJet 3830 Printer",
+      "productPrice": "49.89",
+      "productType": "printer",
+      "productDescription": "Main functions of this HP color inkjet photo printer: copy, scan, fax, wireless printing, AirPrint, touchscreen, Instant Ink ready so you'll never run out of ink, and more",
+      "productImage": "../lib/img/product8.jpg",
+      "productImageAlt": "HP Inkjet Printer"
+    }
+  ]
+}
