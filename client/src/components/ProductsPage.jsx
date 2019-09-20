@@ -13,11 +13,19 @@ import "../css/mdb.min.css";
 import "../css/style.css";
 import "../App.css";
 
+
 class ProductsPage extends React.Component {
   state = {
     productsMap: products.products
   };
-
+  componentDidMount = async () => {
+    // Fetch all products
+    const port = process.env.PORT || 25565;
+    const fetchData = await fetch(`http://localhost:25565/api/products`);
+    const data = await JSON.stringify(fetchData);
+    console.log(fetchData);
+    console.log('test');
+  }
   sortByPriceHandler = () => {
     function compareByPrice(a, b) {
       const priceA = a.productPrice;
