@@ -37,25 +37,25 @@
 }
 @media (min-width: 1025px){
   .card {
-    max-height: 515px;
+    max-height: 545px;
     max-width: 350px;
-    min-height: 515px;
+    min-height: 545px;
     min-width: 350px;
   }
 }
 @media (max-width: 1025px) {
   .card {
-    max-height: 515px;
+    max-height: 545px;
     max-width: 300px;
-    min-height: 515px;
+    min-height: 545px;
     min-width: 300px;
   }
 }
 @media (max-width: 768px){
   .card {
-    max-height: 515px;
+    max-height: 545px;
     max-width: 225px;
-    min-height: 515px;
+    min-height: 545px;
     min-width: 225px;
   }
 }
@@ -67,8 +67,14 @@
     min-width: 380px;
 
   }
+  #root {
+    width: 110vw;
+  }
 }
 
 .card-body {
   padding: 1.5rem;
+}
+.sortAndFilter {
+  display: inline;
 }

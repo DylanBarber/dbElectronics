@@ -16,30 +16,39 @@ import "../App.css";
 
 class ProductsPage extends React.Component {
   state = {
-    productsMap: products.products
+    products: []
   };
-  componentDidMount = async () => {
-    // Fetch all products
+  componentDidMount = () => {
+    this.fetchAllProducts()();
+  }
+  fetchAllProducts = (product_type) => async () => {
     const port = process.env.PORT || 25565;
-    const fetchData = await fetch(`http://localhost:25565/api/products`);
-    const data = await JSON.stringify(fetchData);
-    console.log(fetchData);
-    console.log('test');
+    // Fetch all products
+    if (product_type){
+      console.log(product_type);
+      const fetchData = await fetch(`http://localhost:${port}/api/products/?type=${product_type}`);
+      const data = await fetchData.json();
+      this.setState({products: data})
+      return;
+    }
+    const fetchData = await fetch(`http://localhost:${port}/api/products`);
+    const data = await fetchData.json();
+    this.setState({products: data})
   }
   sortByPriceHandler = () => {
     function compareByPrice(a, b) {
-      const priceA = a.productPrice;
-      const priceB = b.productPrice;
+      const priceA = a.product_price;
+      const priceB = b.product_price;
       return priceA - priceB;
     }
     this.setState({
-      productsMap: this.state.productsMap.slice().sort(compareByPrice)
+      products: this.state.products.slice().sort(compareByPrice)
     });
   };
   sortByTypeHandler = () => {
     function compareByType(a, b) {
-      const typeA = a.productType;
-      const typeB = b.productType;
+      const typeA = a.product_type;
+      const typeB = b.product_type;
       if (typeA < typeB) {
         return -1;
       }
@@ -50,18 +59,21 @@ class ProductsPage extends React.Component {
       }
     }
     this.setState({
-      productsMap: this.state.productsMap.slice().sort(compareByType)
+      products: this.state.products.slice().sort(compareByType)
     });
   };
   unsortHandler = () => {
-    this.setState({ productsMap: products.products });
+    this.fetchAllProducts()();
+  };
+  unfilterHandler = () => {
+    this.fetchAllProducts()();
   };
 
   render() {
     return (
       <div className="page-wrapper">
         <div className="container container-bg productsDiv">
-          <div className="dropdown">
+          <div className="dropdown sortAndFilter">
             <a
               className="dropdownButton btn dropdown-toggle"
               href="###"
@@ -86,18 +98,46 @@ class ProductsPage extends React.Component {
               </a>
             </div>
           </div>
+          <div className="dropdown sortAndFilter">
+            <a
+              className="dropdownButton btn dropdown-toggle"
+              href="###"
+              role="button"
+              id="dropdownMenuLink"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Filter
+            </a>
+
+            <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a className="dropdown-item" href="###" onClick={this.fetchAllProducts('computer')}>
+                Computers
+              </a>
+              <a className="dropdown-item" href="###" onClick={this.fetchAllProducts('camera')}>
+                Cameras
+              </a>
+              <a className="dropdown-item" href="###" onClick={this.fetchAllProducts('printer')}>
+                Printers
+              </a>
+              <a className="dropdown-item" href="###" onClick={this.unsortHandler}>
+                Unfilter
+              </a>
+            </div>
+          </div>
 
           <div className="row sortedProductsRow">
-            {this.state.productsMap.map((value, i) => {
+            {this.state.products.map((value, i) => {
               return (
                 <Product
                   key={i}
-                  productName={value.productName}
-                  productPrice={value.productPrice}
-                  productType={value.productType}
-                  productDescription={value.productDescription}
-                  productImage={value.productImage}
-                  productImageAlt={value.productImageAlt}
+                  productName={value.product_name}
+                  productPrice={value.product_price}
+                  productType={value.product_type}
+                  productDescription={value.product_description}
+                  productImage={value.product_image}
+                  productImageAlt={value.product_name}
                 />
               );
             })}
