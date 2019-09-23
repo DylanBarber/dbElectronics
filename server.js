@@ -24,7 +24,8 @@ app.get('/products' || '/' || '/contact', (req, res) => {
 //GET route for products
 app.get('/api/products', (req, res) => {
   if (req.query.type){
-    sql.query('SELECT * FROM products WHERE product_type=?',[req.query.type], (err, data,) => {
+    sql.query('SELECT * FROM products WHERE product_type=?',[req.query.type], (err, data) => {
+      if (err) res.send(err);
       res.json(data);
       return
     })

@@ -12,6 +12,7 @@ import ProductsPage from "./components/ProductsPage";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Cart from "./components/Cart"
 
 // CSS Files
 import "./css/bootstrap.min.css";
@@ -71,6 +72,13 @@ class App extends React.Component {
                 >
                   <li className="nav-item">Contact Us!</li>
                 </NavLink>
+                <NavLink
+                  className='navBarLink nav-link'
+                  activeClassName="active"
+                  to="/Cart"
+                >
+                  <li className="nav-item">Cart</li>
+                </NavLink>
               </ul>
               {/* <!-- Links --> */}
             </div>
@@ -80,6 +88,7 @@ class App extends React.Component {
           <Route path="/" exact component={Home} />
           <Route path="/Products" component={ProductsPage} />
           <Route path="/Contact" component={Contact} />
+          <Route path="/Cart" component={Cart} />
           <Footer />
         </Router>
       </>

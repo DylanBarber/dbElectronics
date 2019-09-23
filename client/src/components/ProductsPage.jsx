@@ -72,7 +72,7 @@ class ProductsPage extends React.Component {
   render() {
     return (
       <div className="page-wrapper">
-        <div className="container container-bg productsDiv">
+        <div className="container container-bg productsContainer-bg productsDiv">
           <div className="dropdown sortAndFilter">
             <a
               className="dropdownButton btn dropdown-toggle"

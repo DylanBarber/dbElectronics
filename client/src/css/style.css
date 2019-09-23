@@ -16,8 +16,13 @@ body, html {
 
 .container-bg {
     background-color: whitesmoke;
-    height: 100%;
     box-shadow: -16px 0px 20px 0px #3e4551, 16px 0px 20px 0px #3e4551;
+
+}
+.productsContainer-bg {
+  background-color: whitesmoke;
+  height: 2371px;
+  box-shadow: -16px 0px 20px 0px #3e4551, 16px 0px 20px 0px #3e4551;
 
 }
 .navbar-brand{
