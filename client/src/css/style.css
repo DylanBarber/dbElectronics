@@ -43,7 +43,10 @@ h2, p {
 }
 
 /* Checkout */
-
+.checkoutContainer {
+  /* min-height: 100vh; */
+  flex: 1;
+}
 .checkoutContainer input {
   border-top: 0px;
   border-right: 0px;

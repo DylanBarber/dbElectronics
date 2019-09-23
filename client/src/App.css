@@ -4,6 +4,7 @@
 #root {
   display: flex;
   flex-direction: column;
+  min-height:100vh;
 }
 .dropdownButton {
   background-color: #4285f4;
