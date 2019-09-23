@@ -1,42 +1,149 @@
 @import url('https://fonts.googleapis.com/css?family=Geostar&display=swap');
-
 .page-wrapper {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
- }
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
 
 body, html {
-    height: 100vh;
-    background: rgb(247, 247, 247);
-    background: radial-gradient(circle, rgba(247, 247, 247, 1) 0%, rgba(66, 182, 244, 1) 100%);
-    overflow: auto;
-    
+  height: 100vh;
+  background: rgb(247, 247, 247);
+  background: radial-gradient(circle, rgba(247, 247, 247, 1) 0%, rgba(66, 182, 244, 1) 100%);
+  overflow: auto;
 }
 
 .container-bg {
-    background-color: whitesmoke;
-    box-shadow: -16px 0px 20px 0px #3e4551, 16px 0px 20px 0px #3e4551;
-
+  background-color: whitesmoke;
+  box-shadow: -16px 0px 20px 0px #3e4551, 16px 0px 20px 0px #3e4551;
 }
+
 .productsContainer-bg {
   background-color: whitesmoke;
   height: 2371px;
   box-shadow: -16px 0px 20px 0px #3e4551, 16px 0px 20px 0px #3e4551;
+}
 
+.navbar-brand {
+  font-family: 'Geostar';
+  border: 2px solid white;
+  padding: 2px;
 }
-.navbar-brand{
-    font-family: 'Geostar';
-    border: 2px solid white;
-    padding: 2px;
-}
+
 h2, p {
-    font-family: Montserrat;
+  font-family: Montserrat;
 }
+
 .card {
-    margin-top: 15px;
-    margin-bottom: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
-.sort{
-    margin-right: 100px;
+
+.sort {
+  margin-right: 100px;
+}
+
+/* Checkout */
+
+.checkoutContainer input {
+  border-top: 0px;
+  border-right: 0px;
+  border-bottom: 2px solid grey;
+  border-left: 0px;
+  width: 90%;
+  margin: 15px;
+}
+
+.checkoutContainer h2 {
+  font-weight: 350;
+  padding: 10px;
+  margin: 15px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px black;
+}
+
+.paymentInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  /* margin: 10px; */
+}
+
+/* Shipping info */
+
+.shippingInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  /* margin: 10px; */
+}
+
+.shippingInfo input {
+  margin-bottom: 50px;
+}
+
+.shippingInfo select {
+  margin-bottom: 30px;
+}
+
+.streetAndApt {
+  display: flex;
+}
+
+.streetAndApt input {
+  width: 52%;
+}
+
+#aptNum {
+  width: 30%;
+}
+
+.stateAndCity {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.stateAndCity select {
+  height: 19%;
+  border: 1px solid grey;
+  color: grey;
+  min-width: 18%;
+  max-width: 18%;
+}
+
+.stateAndCity input {
+  width: 68%;
+}
+
+.countryAndZip {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.countryAndZip select {
+  height: 15%;
+  border: 1px solid grey;
+  color: grey;
+  min-width: 61%;
+  max-width: 61%;
+  margin-left: 13px;
+}
+
+#zip {
+  width: 25%;
+}
+
+/* Order info */
+
+.orderInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  /* margin: 10px; */
 }

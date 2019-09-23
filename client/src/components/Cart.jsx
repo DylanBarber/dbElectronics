@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from "react-router-dom";
 
 const Cart = () => {
   return (
@@ -130,9 +131,11 @@ const Cart = () => {
                 </h4>
               </td>
               <td colspan="3" class="text-right">
-                <button type="button" class="btn btn-primary btn-rounded waves-effect waves-light">Complete purchase
-                                                  <i class="fas fa-angle-right right"></i>
-                </button>
+                <NavLink to="/Checkout">
+                  <button type="button" class="btn btn-primary btn-rounded waves-effect waves-light">Complete purchase
+                  <i class="fas fa-angle-right right"></i>
+                  </button>
+                </NavLink>
               </td>
             </tr>
             {/* <!-- Fourth row --> */}

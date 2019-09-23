@@ -4,9 +4,6 @@ import React from "react";
 // Components
 import Product from "./Product";
 
-// JSON
-import products from "../products.json";
-
 // CSS Files
 import "../css/bootstrap.min.css";
 import "../css/mdb.min.css";

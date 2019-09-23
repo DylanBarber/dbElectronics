@@ -13,6 +13,7 @@ import Home from "./components/Home";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Cart from "./components/Cart"
+import Checkout from "./components/Checkout"
 
 // CSS Files
 import "./css/bootstrap.min.css";
@@ -89,6 +90,7 @@ class App extends React.Component {
           <Route path="/Products" component={ProductsPage} />
           <Route path="/Contact" component={Contact} />
           <Route path="/Cart" component={Cart} />
+          <Route path="/Checkout" component={Checkout} />
           <Footer />
         </Router>
       </>
