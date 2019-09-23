@@ -181,6 +181,36 @@ h2, p {
   width: 90%;
   height: 350px;
   background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.orderProduct{
+  width: 100%;
+  height: 50px;
+  margin: 5px;
+  margin-top: 0px;
+  border-bottom: 4px solid grey;
+  display: flex;
+}
+.itemName {
+  border-right: 1px solid grey;
+  padding: 10px;
+  margin-bottom: 0px;
+}
+.itemPrice {
+  border-right: 1px solid grey;
+  padding: 10px;
+  margin-bottom: 0px;
+}
+.itemQty {
+  border-right: 1px solid grey;
+  padding: 10px;
+  margin-bottom: 0px;
+}
+.itemTotal {
+  padding: 10px;
+  margin-bottom: 0px;
 }
 .completePurchase {
   margin-top: 25px;

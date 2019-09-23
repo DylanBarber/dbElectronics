@@ -362,7 +362,14 @@ const Checkout = () => {
         <div className='col-md-4'>
           <div className='card orderInfo'>
             <h2>Order Info</h2>
-            <div className='orderDetails'><p>PLACEHOLDERRrrrrrrrrrRRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRR</p></div>
+            <div className='orderDetails'>
+              <div className='orderProduct'>
+                <p className='itemName'>Item</p>
+                <p className='itemPrice'>Unit Price</p>
+                <p className='itemQty'>Qty.</p>
+                <p className='itemTotal'>Total</p>
+              </div>
+            </div>
             <button className='completePurchase'>Complete Purchase</button>
           </div>
 
