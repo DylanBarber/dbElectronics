@@ -58,7 +58,6 @@ h2, p {
   padding: 10px;
   margin: 15px;
   border-radius: 15px;
-  box-shadow: 0px 0px 5px black;
 }
 
 .paymentInfo {
@@ -67,6 +66,37 @@ h2, p {
   align-items: center;
   border-radius: 20px;
   /* margin: 10px; */
+}
+.paymentInfo input {
+  margin-bottom: 50px;
+}
+.paymentInfo select {
+  margin-bottom: 30px;
+}
+.cardNumber {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.cardNumber select {
+  height: 19%;
+  border: 1px solid grey;
+  color: grey;
+  min-width: 18%;
+  max-width: 18%;
+}
+
+.cardNumber input {
+  width: 68%;
+}
+
+.expCvv {
+  display: flex;
+}
+.expCvv input{
+  width: 41%;
 }
 
 /* Shipping info */
