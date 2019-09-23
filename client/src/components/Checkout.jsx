@@ -11,9 +11,9 @@ const Checkout = () => {
         <div className='col-md-4'>
           <div className='card paymentInfo'>
             <h2>Payment info</h2>
-            <input placeholder="Name on Card"/>
+            <input placeholder="Name on Card*"/>
             <div className='cardNumber'>
-              <input placeholder='Card Number'/>
+              <input placeholder='Card Number*'/>
               <select selected="Type">
                 <option>Type</option>
                 <option value="mastercard">Mastercard</option>
@@ -22,8 +22,8 @@ const Checkout = () => {
               </select>
             </div>
             <div className="expCvv">
-              <input placeholder="Expiration"/>
-              <input placeholder="CVV"/>
+              <input placeholder="Expiration*"/>
+              <input placeholder="CVV*"/>
             </div>
           </div>
         </div>
@@ -362,6 +362,8 @@ const Checkout = () => {
         <div className='col-md-4'>
           <div className='card orderInfo'>
             <h2>Order Info</h2>
+            <div className='orderDetails'><p>PLACEHOLDERRrrrrrrrrrRRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRRRRrrrrrrrrrRRR</p></div>
+            <button className='completePurchase'>Complete Purchase</button>
           </div>
 
         </div>
