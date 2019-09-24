@@ -19,8 +19,8 @@ body, html {
 
 .productsContainer-bg {
   background-color: whitesmoke;
-  height: 2371px;
   box-shadow: -16px 0px 20px 0px #3e4551, 16px 0px 20px 0px #3e4551;
+  min-height: 80vh;
 }
 
 .navbar-brand {

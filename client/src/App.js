@@ -14,6 +14,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Cart from "./components/Cart"
 import Checkout from "./components/Checkout"
+import Login from "./components/Login"
 
 // CSS Files
 import "./css/bootstrap.min.css";
@@ -80,6 +81,13 @@ class App extends React.Component {
                 >
                   <li className="nav-item">Cart</li>
                 </NavLink>
+                <NavLink
+                  className='navBarLink nav-link'
+                  activeClassName="active"
+                  to="/login"
+                >
+                  <li className="nav-item">Login</li>
+                </NavLink>
               </ul>
               {/* <!-- Links --> */}
             </div>
@@ -91,6 +99,7 @@ class App extends React.Component {
           <Route path="/Contact" component={Contact} />
           <Route path="/Cart" component={Cart} />
           <Route path="/Checkout" component={Checkout} />
+          <Route path="/Login" component={Login} />
           <Footer />
         </Router>
       </>
