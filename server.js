@@ -38,10 +38,10 @@ app.get('/api/products', (req, res) => {
 })
 //GET route for contacts
 app.get('/api/contacts', (req, res) => {
-  if(req.query.id){
+  if (req.query.id) {
     sql.query('SELECT * FROM `contacts` WHERE contact_id=?', [req.query.id], (err, data) => {
       if (err) throw err;
-      if (data.length === 0){
+      if (data.length === 0) {
         res.status(404).send(`Contact ${req.query.id} not found`);
       }
     });
@@ -51,7 +51,22 @@ app.get('/api/contacts', (req, res) => {
     })
   }
 })
+//GET route for invoices
+app.get('/api/productinvoice/', (req, res) => {
+  if (req.query.id) {
+    sql.query('SELECT * FROM `pricing` WHERE invoice_id=?', [req.query.id], (err, data) => {
+      if (err) throw err;
+      if (data.length === 0) {
+        res.status(404).send(`Invoice ${req.query.id} not found`);
+      } else {
+        res.json(data);
+      }
 
+    })
+  } else {
+    res.send('Please provide an invoice id. syntax is /api/productinvoice/?id=ID');
+  }
+})
 
 //POST route for adding a new contact
 app.post('/api/newcontact', (req, res) => {
