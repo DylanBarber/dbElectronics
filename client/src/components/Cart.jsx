@@ -132,7 +132,7 @@ const Cart = () => {
               </td>
               <td colspan="3" class="text-right">
                 <NavLink to="/Checkout">
-                  <button type="button" class="btn btn-primary btn-rounded waves-effect waves-light">Complete purchase
+                  <button type="button" class="btn btn-primary btn-rounded waves-effect waves-light">Checkout
                   <i class="fas fa-angle-right right"></i>
                   </button>
                 </NavLink>
