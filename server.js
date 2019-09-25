@@ -5,10 +5,12 @@ const mysql = require('mysql');
 const dotenv = require('dotenv').config();
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const cookieParser = ('cookie-parser');
 
 
 const app = express();
-app.use(bodyParser.json())
+
+app.use(bodyParser.json());
 app.use(cors());
 const sql = mysql.createConnection({
   host: 'localhost',
@@ -35,6 +37,7 @@ function verifyToken(req, res, next) {
     //Next
     next();
   } else {
+
     res.sendStatus(403);
   }
 
@@ -62,7 +65,7 @@ app.get('/api/products', (req, res) => {
 
 })
 //GET route for contacts
-app.get('/api/contacts', verifyToken, (req, res) => {
+app.get('/api/contacts', (req, res) => {
   if (req.query.id) {
     sql.query('SELECT * FROM `contacts` WHERE contact_id=?', [req.query.id], (err, data) => {
       if (err) throw err;
@@ -120,7 +123,7 @@ app.post('/api/login', (req, res) => {
     if (data.length === 0) {
       return res.status(403).send('Username or password is incorrect');
     }
-    return jwt.sign({ data }, process.env.JWT_KEY, { expiresIn: "12h" }, (err, token) => {
+    return jwt.sign({ data }, process.env.JWT_KEY, { expiresIn: "60s" }, (err, token) => {
       if (err) res.status(500).send(err.message);
       console.log(token);
       return res.json({ token })
