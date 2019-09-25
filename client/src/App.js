@@ -70,7 +70,15 @@ class App extends React.PureComponent {
     }
 
   }
+  
   render() {
+    //Calculate total of products
+    let totalOfProducts = 0;
+    this.state.cart.forEach(product => {
+      
+      totalOfProducts += product.quantity;
+    })
+    //
     return (
       <MyContext.Provider value={{
         cart: this.state.cart,
@@ -128,7 +136,7 @@ class App extends React.PureComponent {
                   activeClassName="active"
                   to="/Cart"
                 >
-                  <li className="nav-item">Cart ({this.state.cart.length})</li>
+                  <li className="nav-item">Cart ({totalOfProducts})</li>
                 </NavLink>
                 <NavLink
                   className='navBarLink nav-link'
