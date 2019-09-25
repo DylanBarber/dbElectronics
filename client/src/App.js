@@ -12,9 +12,9 @@ import ProductsPage from "./components/ProductsPage";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Cart from "./components/Cart"
-import Checkout from "./components/Checkout"
-import Login from "./components/Login"
+import Cart from "./components/Cart";
+import Checkout from "./components/Checkout";
+import Login from "./components/Login";
 
 // CSS Files
 import "./css/bootstrap.min.css";
@@ -23,10 +23,59 @@ import "./css/style.css";
 import "./css/slide.css";
 import "./App.css";
 
-class App extends React.Component {
+//React Context
+import MyContext from './components/Context'
+
+
+
+class App extends React.PureComponent {
+  state = {
+    cart: []
+  }
+  addToCart = (addedProduct) => () => {
+    const productExistsInCart = this.state.cart.some(product => addedProduct.productName === product.productName)
+    if (!productExistsInCart) {
+      const addProduct = this.state.cart.splice()
+      addProduct.push(addedProduct)
+      const updatedCart = addProduct.map((product) => {
+        if (product.productName === addedProduct.productName) {
+          return {
+            ...product,
+            quantity: 1
+          }
+        } return product
+      })
+      this.setState(prevState => ({
+        cart: [...prevState.cart, ...updatedCart]
+      }))
+    } else {
+
+      const updatedCart = this.state.cart.map((product) => {
+        if (product.productName === addedProduct.productName) {
+          if (product.quantity) {
+            return {
+              ...product,
+              quantity: product.quantity + 1
+            }
+          } else {
+            return {
+              ...product,
+              quantity: 1
+            }
+          }
+        }
+        return product;
+      })
+      this.setState({ cart: updatedCart });
+    }
+
+  }
   render() {
     return (
-      <>
+      <MyContext.Provider value={{
+        cart: this.state.cart,
+        addToCart: this.addToCart
+      }}>
         <Router>
           {/* <!--Navbar--> */}
           <nav className="navbar navbar-expand-lg navbar-dark primary-color">
@@ -79,7 +128,7 @@ class App extends React.Component {
                   activeClassName="active"
                   to="/Cart"
                 >
-                  <li className="nav-item">Cart</li>
+                  <li className="nav-item">Cart ({this.state.cart.length})</li>
                 </NavLink>
                 <NavLink
                   className='navBarLink nav-link'
@@ -102,7 +151,7 @@ class App extends React.Component {
           <Route path="/Login" component={Login} />
           <Footer />
         </Router>
-      </>
+      </MyContext.Provider>
     );
   }
 }

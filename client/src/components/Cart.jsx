@@ -1,153 +1,98 @@
-import React from 'react'
+import React from 'react';
 import { NavLink } from "react-router-dom";
+import CartProduct from './CartProduct';
+import MyContext from './Context';
 
 const Cart = () => {
   return (
-    <div className="container container-bg">
-      <div class="table-responsive">
+    <MyContext.Consumer>
+      {(context) => {
+        const cartProducts = context.cart.map((product) => (
+          <CartProduct
+            product = {product}
+          />
+        ))
+        return (
+          <div className="container container-bg" >
+            <div className="table-responsive">
 
-        <table class="table product-table">
+              <table className="table product-table">
 
-          {/* <!-- Table head --> */}
-          <thead class="mdb-color lighten-5">
-            <tr>
-              <th></th>
-              <th class="font-weight-bold">
-                <strong>Product</strong>
-              </th>
-              <th class="font-weight-bold">
-                <strong>Color</strong>
-              </th>
-              <th></th>
-              <th class="font-weight-bold">
-                <strong>Price</strong>
-              </th>
-              <th class="font-weight-bold">
-                <strong>QTY</strong>
-              </th>
-              <th class="font-weight-bold">
-                <strong>Amount</strong>
-              </th>
-              <th></th>
-            </tr>
-          </thead>
-          {/* <!-- /.Table head --> */}
+                {/* <!-- Table head --> */}
+                <thead className="mdb-color lighten-5">
+                  <tr>
+                    <th></th>
+                    <th className="font-weight-bold">
+                      <strong>Product</strong>
+                    </th>
+                    <th></th>
+                    <th className="font-weight-bold">
+                      <strong>Price</strong>
+                    </th>
+                    <th className="font-weight-bold">
+                      <strong>QTY</strong>
+                    </th>
+                    <th className="font-weight-bold">
+                      <strong>Amount</strong>
+                    </th>
+                    <th></th>
+                  </tr>
+                </thead>
+                {/* <!-- /.Table head --> */}
 
-          {/* <!-- Table body --> */}
-          <tbody>
+                {/* <!-- Table body --> */}
+                <tbody>
+                  {cartProducts}
+                  {/* <!-- /.Third row --> */}
 
-            {/* <!-- First row --> */}
-            <tr>
-              <th scope="row">
-                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg" alt="" class="img-fluid z-depth-0"></img>
-              </th>
-              <td>
-                <h5 class="mt-3">
-                  <strong>iPhone</strong>
-                </h5>
-                <p class="text-muted">Apple</p>
-              </td>
-              <td>White</td>
-              <td></td>
-              <td>$800</td>
-              <td>
-                <input type="number" value="2" aria-label="Search" class="form-control" style={{ width: "100px" }}></input>
-              </td>
-              <td class="font-weight-bold">
-                <strong>$800</strong>
-              </td>
-              <td>
-                <button type="button" class="btn btn-sm btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="" data-original-title="Remove item">X
-                                              </button>
-              </td>
-            </tr>
-            {/* <!-- /.First row --> */}
+                  {/* <!-- Fourth row --> */}
+                  <tr>
+                    <td colSpan="3"></td>
+                    <td>
+                      <h4 className="mt-2">
+                        <strong>Total</strong>
+                      </h4>
+                    </td>
+                    <td className="text-right">
+                      <h4 className="mt-2">
+                        <strong>$2600</strong>
+                      </h4>
+                    </td>
+                    <td colSpan="3" className="text-right">
+                      <NavLink to="/Checkout">
+                        <button type="button" className="btn btn-primary btn-rounded waves-effect waves-light">Checkout
+                  <i className="fas fa-angle-right right"></i>
+                        </button>
+                      </NavLink>
+                    </td>
+                  </tr>
+                  {/* <!-- Fourth row --> */}
 
-            {/* <!-- Second row --> */}
-            <tr>
-              <th scope="row">
-                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/6.jpg" alt="" class="img-fluid z-depth-0"></img>
-              </th>
-              <td>
-                <h5 class="mt-3">
-                  <strong>Headphones</strong>
-                </h5>
-                <p class="text-muted">Sony</p>
-              </td>
-              <td>Red</td>
-              <td></td>
-              <td>$200</td>
-              <td>
-                <input type="number" value="2" aria-label="Search" class="form-control" style={{ width: "100px" }}></input>
-              </td>
-              <td class="font-weight-bold">
-                <strong>$600</strong>
-              </td>
-              <td>
-                <button type="button" class="btn btn-sm btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="" data-original-title="Remove item">X
-                                              </button>
-              </td>
-            </tr>
-            {/* <!-- /.Second row --> */}
+                </tbody>
+                {/* <!-- /.Table body --> */}
 
-            {/* <!-- Third row --> */}
-            <tr>
-              <th scope="row">
-                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/1.jpg" alt="" class="img-fluid z-depth-0"></img>
-              </th>
-              <td>
-                <h5 class="mt-3">
-                  <strong>iPad Pro</strong>
-                </h5>
-                <p class="text-muted">Apple</p>
-              </td>
-              <td>Gold</td>
-              <td></td>
-              <td>$600</td>
-              <td>
-                <input type="number" value="2" aria-label="Search" class="form-control" style={{ width: "100px" }}></input>
-              </td>
-              <td class="font-weight-bold">
-                <strong>$1200</strong>
-              </td>
-              <td>
-                <button type="button" class="btn btn-sm btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="" data-original-title="Remove item">X
-                                              </button>
-              </td>
-            </tr>
-            {/* <!-- /.Third row --> */}
+              </table>
 
-            {/* <!-- Fourth row --> */}
-            <tr>
-              <td colspan="3"></td>
-              <td>
-                <h4 class="mt-2">
-                  <strong>Total</strong>
-                </h4>
-              </td>
-              <td class="text-right">
-                <h4 class="mt-2">
-                  <strong>$2600</strong>
-                </h4>
-              </td>
-              <td colspan="3" class="text-right">
-                <NavLink to="/Checkout">
-                  <button type="button" class="btn btn-primary btn-rounded waves-effect waves-light">Checkout
-                  <i class="fas fa-angle-right right"></i>
-                  </button>
-                </NavLink>
-              </td>
-            </tr>
-            {/* <!-- Fourth row --> */}
-
-          </tbody>
-          {/* <!-- /.Table body --> */}
-
-        </table>
-
-      </div>
-    </div>
-  )
+            </div>
+          </div>
+        );
+      }}
+    </MyContext.Consumer>
+  );
 }
 
-export default Cart; 
+export default Cart;
+
+
+
+
+// const cartProducts = context.cart.map((product) => {
+//   <CartProduct
+//     productImage={product.productImage}
+//     productImageAlt={product.productImageAlt}
+//     productName={product.productName}
+//     productPrice={product.productPrice}
+//     productQuantity={product.productQuantity}
+//     productTotal={parseInt(product.productPrice) * parseInt(product.productQuantity)}
+//   />
+// })

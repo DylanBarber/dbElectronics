@@ -11,7 +11,8 @@ import "../css/style.css";
 import "../App.css";
 
 
-class ProductsPage extends React.Component {
+
+class ProductsPage extends React.PureComponent {
   state = {
     products: []
   };
@@ -21,16 +22,15 @@ class ProductsPage extends React.Component {
   fetchAllProducts = (product_type) => async () => {
     const port = process.env.PORT || 25565;
     // Fetch all products
-    if (product_type){
-      console.log(product_type);
+    if (product_type) {
       const fetchData = await fetch(`http://localhost:${port}/api/products/?type=${product_type}`);
       const data = await fetchData.json();
-      this.setState({products: data})
+      this.setState({ products: data })
       return;
     }
     const fetchData = await fetch(`http://localhost:${port}/api/products`);
     const data = await fetchData.json();
-    this.setState({products: data})
+    this.setState({ products: data })
   }
   sortByPriceHandler = () => {
     function compareByPrice(a, b) {

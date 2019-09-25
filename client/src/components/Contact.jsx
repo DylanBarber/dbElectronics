@@ -4,7 +4,7 @@ import React from "react";
 //CSS
 import "../css/contact.css";
 
-class Contact extends React.Component {
+class Contact extends React.PureComponent {
   state = {
     nameValue: "",
     emailValue: "",
