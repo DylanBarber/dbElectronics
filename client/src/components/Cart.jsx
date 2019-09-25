@@ -12,6 +12,10 @@ const Cart = () => {
             product = {product}
           />
         ))
+        let subtotal = 0;
+        context.cart.forEach(product => {
+            subtotal += product.quantity * product.productPrice;
+          })
         return (
           <div className="container container-bg" >
             <div className="table-responsive">
@@ -55,7 +59,7 @@ const Cart = () => {
                     </td>
                     <td className="text-right">
                       <h4 className="mt-2">
-                        <strong>$2600</strong>
+                        <strong>${subtotal}</strong>
                       </h4>
                     </td>
                     <td colSpan="3" className="text-right">
