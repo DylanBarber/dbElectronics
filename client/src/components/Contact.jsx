@@ -44,6 +44,10 @@ class Contact extends React.PureComponent {
     if (this.state.messageValue === "") {
       errors.push("Please enter a message.");
     }
+    if (this.state.messageValue.length > 255){
+      console.log('test');
+      errors.push(`Message length must be below 255 characters. It is currently ${this.state.messageValue.length} characters long`);
+    }
     this.setState({ formErrors: errors });
     if (errors.length === 0) {
       this.setState({ submittedSuccessfully: true });

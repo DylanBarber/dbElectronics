@@ -34,6 +34,14 @@ class ContactsAdmin extends React.Component {
         <td className='adminProductsTableProduct' id='adminProductsTableType'>{product.product_type}</td>
       </tr>
     ))
+    const ContactsMap = this.state.contacts.map(product => (
+      <tr>
+        <td className='adminContactsTableProduct'>{product.product_id}</td>
+        <td className='adminContactsTableProduct'>{product.product_name}</td>
+        <td className='adminContactsTableProduct'>{product.product_price}</td>
+        <td className='adminContactsTableProduct' id='adminContactsTableType'>{product.product_type}</td>
+      </tr>
+    ))
     return (
       <div className='container container-bg adminContainer'>
         <div className='adminProductDiv'>
@@ -55,7 +63,20 @@ class ContactsAdmin extends React.Component {
         </div>
         <div className='adminContactsDiv'>
           <h2>Contacts</h2>
-          <div className='card adminContactsCard' />
+          <div className='card adminContactsCard'>
+          <table>
+              <thead>
+                <tr>
+                <td className='adminContactsTableHead'>Product ID</td>
+                <td className='adminContactsTableHead'>Product Name</td>
+                <td className='adminContactsTableHead'>Product Price</td>
+                <td className='adminContactsTableHead' id='adminContactsTableType'>Product Type</td>
+                </tr>
+                {productsMap}
+              </thead>
+              
+            </table>
+          </div>
         </div>
 
       </div>

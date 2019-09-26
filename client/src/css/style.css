@@ -247,14 +247,14 @@ h2, p {
   flex-direction: column;
   align-items: center;
 }
-.adminProductsTableHead, .adminProductsTableProduct {
+.adminProductsTableHead, .adminProductsTableProduct, .adminContactsTableHead, .adminContactsTableProduct {
   padding: 5px;
   border-right: 1px solid grey;
   border-bottom: 2px solid grey;
 }
-.adminProductsTableHead{
+.adminProductsTableHead, .adminContactsTableHead{
   font-weight: bold;
 }
-#adminProductsTableType{
+#adminProductsTableType, #adminContactsTableType{
   border-right: 0px;
 }
