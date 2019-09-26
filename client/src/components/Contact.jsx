@@ -27,6 +27,19 @@ class Contact extends React.PureComponent {
   messageOnChangeHandler = e => {
     this.setState({ messageValue: e.target.value });
   };
+  postForm = async (form) => {
+    const port = process.env.PORT || 25565
+    console.log(form);
+    const response = await fetch(`http://localhost:${port}/api/newcontact`, {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: 'POST',
+      body: JSON.stringify(form)
+    })
+    const data = await response.json()
+    console.log(data);
+  }
   formSubmit = () => {
     const errors = [];
     if (this.state.nameValue === "") {
@@ -51,6 +64,12 @@ class Contact extends React.PureComponent {
     this.setState({ formErrors: errors });
     if (errors.length === 0) {
       this.setState({ submittedSuccessfully: true });
+      this.postForm({
+        name: this.state.nameValue,
+        email: this.state.emailValue,
+        subject: this.state.subjectValue,
+        message: this.state.messageValue
+      }); 
     }
   };
 

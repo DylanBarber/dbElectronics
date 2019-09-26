@@ -26,6 +26,7 @@ class ContactsAdmin extends React.Component {
   }
 
   render() {
+    console.log(this.state.contacts)
     const productsMap = this.state.products.map(product => (
       <tr>
         <td className='adminProductsTableProduct'>{product.product_id}</td>
@@ -34,12 +35,13 @@ class ContactsAdmin extends React.Component {
         <td className='adminProductsTableProduct' id='adminProductsTableType'>{product.product_type}</td>
       </tr>
     ))
-    const ContactsMap = this.state.contacts.map(product => (
+    const contactsMap = this.state.contacts.map(contact => (
       <tr>
-        <td className='adminContactsTableProduct'>{product.product_id}</td>
-        <td className='adminContactsTableProduct'>{product.product_name}</td>
-        <td className='adminContactsTableProduct'>{product.product_price}</td>
-        <td className='adminContactsTableProduct' id='adminContactsTableType'>{product.product_type}</td>
+        <td className='adminContactsTableContact'>{contact.contact_id}</td>
+        <td className='adminContactsTableContact'>{contact.contact_name}</td>
+        <td className='adminContactsTableContact'>{contact.contact_email}</td>
+        <td className='adminContactsTableContact'>{contact.subject}</td>
+        <td className='adminContactsTableContact' id='adminContactsTableMessage'>{contact.message}</td>
       </tr>
     ))
     return (
@@ -67,12 +69,13 @@ class ContactsAdmin extends React.Component {
           <table>
               <thead>
                 <tr>
-                <td className='adminContactsTableHead'>Product ID</td>
-                <td className='adminContactsTableHead'>Product Name</td>
-                <td className='adminContactsTableHead'>Product Price</td>
-                <td className='adminContactsTableHead' id='adminContactsTableType'>Product Type</td>
+                <td className='adminContactsTableHead'>Contact ID</td>
+                <td className='adminContactsTableHead'>Name</td>
+                <td className='adminContactsTableHead'>Email</td>
+                <td className='adminContactsTableHead' id='adminContactsTableType'>Subject</td>
+                <td className='adminContactsTableHead' id='adminContactsTableMessage'>Message</td>
                 </tr>
-                {productsMap}
+                {contactsMap}
               </thead>
               
             </table>

@@ -40,11 +40,12 @@ class App extends React.PureComponent {
     if (!productExistsInCart) {
       const addProduct = this.state.cart.splice()
       addProduct.push(addedProduct)
-      const updatedCart = addProduct.map((product) => {
+      const updatedCart = addProduct.map((product, index) => {
         if (product.productName === addedProduct.productName) {
           return {
             ...product,
-            quantity: 1
+            quantity: 1,
+            key: index
           }
         } return product
       })
@@ -75,7 +76,6 @@ class App extends React.PureComponent {
   }
   
   render() {
-    console.log(process.env.ADMIN_API_KEY)
     //Calculate total of products
     let totalOfProducts = 0;
     this.state.cart.forEach(product => {

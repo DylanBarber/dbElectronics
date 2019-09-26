@@ -7,9 +7,10 @@ const Cart = () => {
   return (
     <MyContext.Consumer>
       {(context) => {
-        const cartProducts = context.cart.map((product) => (
+        const cartProducts = context.cart.map((product, index) => (
           <CartProduct
             product = {product}
+            key = {index}
           />
         ))
         let subtotal = 0;
@@ -17,7 +18,7 @@ const Cart = () => {
             subtotal += product.quantity * product.productPrice;
           })
         return (
-          <div className="container container-bg" >
+          <div className="container container-bg cartContainer" >
             <div className="table-responsive">
 
               <table className="table product-table">

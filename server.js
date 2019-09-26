@@ -98,14 +98,15 @@ app.get('/api/productinvoice/', (req, res) => {
 
 //POST route for adding a new contact
 app.post('/api/newcontact', (req, res) => {
-  const name = req.query.name;
-  const address = req.query.address;
-  const city = req.query.city;
-  const country = req.query.country;
-  if (name && address && city && country) {
-    sql.query("INSERT INTO `contacts` (contact_name, contact_address, contact_city, contact_country) VALUES (?, ?, ?, ?)", [name, address, city, country], (err) => {
+  const name = req.body.name;
+  const email = req.body.email;
+  const subject = req.body.subject;
+  const message = req.body.message;
+  console.log(name, email, subject, message)
+  if (name && email && subject && message) {
+    sql.query("INSERT INTO `contacts` (contact_name, contact_email, subject, message) VALUES (?, ?, ?, ?)", [name, email, subject, message], (err) => {
       if (err) throw err;
-      res.json({ name: name, address: address, city: city, country: country });
+      res.json({ name: name, email: email, subject: subject, message: message });
       return;
     });
   } else {
