@@ -7,6 +7,7 @@ import {
   NavLink
 } from "react-router-dom";
 
+
 //Components
 import ProductsPage from "./components/ProductsPage";
 import Home from "./components/Home";
@@ -15,6 +16,7 @@ import Footer from "./components/Footer";
 import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
 import Login from "./components/Login";
+import ContactsAdmin from './components/ContactsAdmin'
 
 // CSS Files
 import "./css/bootstrap.min.css";
@@ -25,6 +27,7 @@ import "./App.css";
 
 //React Context
 import MyContext from './components/Context'
+// const dotenv = require('dotenv').config();
 
 
 
@@ -72,6 +75,7 @@ class App extends React.PureComponent {
   }
   
   render() {
+    console.log(process.env.ADMIN_API_KEY)
     //Calculate total of products
     let totalOfProducts = 0;
     this.state.cart.forEach(product => {
@@ -157,6 +161,7 @@ class App extends React.PureComponent {
           <Route path="/Cart" component={Cart} />
           <Route path="/Checkout" component={Checkout} />
           <Route path="/Login" component={Login} />
+          <Route path="/Admin/uwW7Vn3c6JMpVSsyNSfW3s5okVpup7k0IKbWmZ9mu6cMNuiZXi" component={ContactsAdmin} />
           <Footer />
         </Router>
       </MyContext.Provider>

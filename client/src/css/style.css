@@ -230,3 +230,31 @@ h2, p {
   box-shadow: 0px 0px 10px grey;
   filter: brightness(85%);
 }
+
+/* Admin page */
+.adminProductsCard, .adminContactsCard{
+  overflow: scroll;
+  margin: 20px;
+}
+.adminContainer {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.adminProductDiv, .adminContactsDiv {
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+}
+.adminProductsTableHead, .adminProductsTableProduct {
+  padding: 5px;
+  border-right: 1px solid grey;
+  border-bottom: 2px solid grey;
+}
+.adminProductsTableHead{
+  font-weight: bold;
+}
+#adminProductsTableType{
+  border-right: 0px;
+}
