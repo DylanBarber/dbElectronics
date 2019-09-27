@@ -5,6 +5,7 @@ import React from "react";
 import "../css/contact.css";
 
 class Contact extends React.PureComponent {
+  //Create intitial state with empty values for what will be form values
   state = {
     nameValue: "",
     emailValue: "",
@@ -14,7 +15,20 @@ class Contact extends React.PureComponent {
     submittedSuccessfully: false
   };
 
-  //Form Validation
+  //For posting form to server and eventually updating DB with this information
+  postForm = async (form) => {
+    const port = process.env.PORT || 25565
+    const response = await fetch(`http://localhost:${port}/api/newcontact`, {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: 'POST',
+      body: JSON.stringify(form)
+    })
+    const data = await response.json()
+  }
+
+  //onChange handlers for updating state when values are entered
   nameOnChangeHandler = e => {
     this.setState({ nameValue: e.target.value });
   };
@@ -27,20 +41,9 @@ class Contact extends React.PureComponent {
   messageOnChangeHandler = e => {
     this.setState({ messageValue: e.target.value });
   };
-  postForm = async (form) => {
-    const port = process.env.PORT || 25565
-    console.log(form);
-    const response = await fetch(`http://localhost:${port}/api/newcontact`, {
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      method: 'POST',
-      body: JSON.stringify(form)
-    })
-    const data = await response.json()
-    console.log(data);
-  }
-  formSubmit = () => {
+  
+  //Called when user clicks 'Submit' on the form page. Validates entries
+  formValidation = () => {
     const errors = [];
     if (this.state.nameValue === "") {
       errors.push("Please enter a name.");
@@ -58,10 +61,10 @@ class Contact extends React.PureComponent {
       errors.push("Please enter a message.");
     }
     if (this.state.messageValue.length > 255){
-      console.log('test');
       errors.push(`Message length must be below 255 characters. It is currently ${this.state.messageValue.length} characters long`);
     }
     this.setState({ formErrors: errors });
+    //If there are no errors found formSubmit will call postForm to create a POST request to the back end
     if (errors.length === 0) {
       this.setState({ submittedSuccessfully: true });
       this.postForm({
@@ -74,6 +77,7 @@ class Contact extends React.PureComponent {
   };
 
   render() {
+    //Map for displaying form validation errors
     const displayErrors = this.state.formErrors.map((error, i) => {
       return (
         <div key={i} className="formErrorDiv">
@@ -81,12 +85,6 @@ class Contact extends React.PureComponent {
         </div>
       );
     });
-
-    // : (
-    //   <div key={i} className="formErrorDiv">
-    //     <p className="formErrorText">Your form has been submitted!</p>
-    //   </div>
-    // );
     return (
       <>
         <div className="container container-bg contactFormDiv">
@@ -191,7 +189,7 @@ class Contact extends React.PureComponent {
                     id="send"
                     href="###"
                     className="btn btn-primary"
-                    onClick={this.formSubmit}
+                    onClick={this.formValidation}
                   >
                     Send
                   </a>
@@ -220,7 +218,7 @@ class Contact extends React.PureComponent {
                 </ul>
               </div>
               {/* <!--Grid column--> */}
-
+              {/* If form was submitted successfully display this message */}
               {this.state.submittedSuccessfully ? (
                 <div className="formSubmittedDiv">
                   <p className="formSubmittedText">

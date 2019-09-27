@@ -8,13 +8,14 @@ import "../css/mdb.min.css";
 import "../css/style.css";
 import "../css/slide.css";
 
-//Functions / Variables
+//Slide images
 const slideImages = [
   "./lib/img/slideImg1.png",
   "./lib/img/slideImg2.jpeg",
   "./lib/img/slideImg3.png"
 ];
 
+//Properties for slideshow
 const properties = {
   duration: 5000,
   transitionDuration: 500,

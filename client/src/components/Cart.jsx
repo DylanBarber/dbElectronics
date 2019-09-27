@@ -1,12 +1,18 @@
+//Dependencies
 import React from 'react';
 import { NavLink } from "react-router-dom";
+
+//Components
 import CartProduct from './CartProduct';
+
+//React Context for cart information
 import MyContext from './Context';
 
 const Cart = () => {
   return (
     <MyContext.Consumer>
       {(context) => {
+        //Mapping over cart products array to display a CartProduct component for each 
         const cartProducts = context.cart.map((product, index) => (
           <CartProduct
             product = {product}
@@ -87,17 +93,3 @@ const Cart = () => {
 }
 
 export default Cart;
-
-
-
-
-// const cartProducts = context.cart.map((product) => {
-//   <CartProduct
-//     productImage={product.productImage}
-//     productImageAlt={product.productImageAlt}
-//     productName={product.productName}
-//     productPrice={product.productPrice}
-//     productQuantity={product.productQuantity}
-//     productTotal={parseInt(product.productPrice) * parseInt(product.productQuantity)}
-//   />
-// })

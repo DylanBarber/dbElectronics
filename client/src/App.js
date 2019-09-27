@@ -25,7 +25,7 @@ import "./css/style.css";
 import "./css/slide.css";
 import "./App.css";
 
-//React Context
+//React Context for cart
 import MyContext from './components/Context'
 // const dotenv = require('dotenv').config();
 
@@ -35,11 +35,17 @@ class App extends React.PureComponent {
   state = {
     cart: []
   }
+  //Function for adding items to cart. Avoids creating copies by adding to a quantity counter
   addToCart = (addedProduct) => () => {
+    //Checking if the product already exists in the cart
     const productExistsInCart = this.state.cart.some(product => addedProduct.productName === product.productName)
+    //If it does not exist..
     if (!productExistsInCart) {
+      //Copy the cart array from state to avoid mutating state
       const addProduct = this.state.cart.splice()
+      //Push the added product to the cart
       addProduct.push(addedProduct)
+      //Add a key and qunatity value to the added product
       const updatedCart = addProduct.map((product, index) => {
         if (product.productName === addedProduct.productName) {
           return {
@@ -49,11 +55,13 @@ class App extends React.PureComponent {
           }
         } return product
       })
+      //Spread current state with updated cart information
       this.setState(prevState => ({
         cart: [...prevState.cart, ...updatedCart]
       }))
+      //If the product does exist..
     } else {
-
+      // Add 1 to the quantity key for the added product
       const updatedCart = this.state.cart.map((product) => {
         if (product.productName === addedProduct.productName) {
           if (product.quantity) {
@@ -70,13 +78,14 @@ class App extends React.PureComponent {
         }
         return product;
       })
+      //Setting state to updated cart
       this.setState({ cart: updatedCart });
     }
 
   }
   
   render() {
-    //Calculate total of products
+    //Calculate total of products for showing in the navBar
     let totalOfProducts = 0;
     this.state.cart.forEach(product => {
       
@@ -84,10 +93,12 @@ class App extends React.PureComponent {
     })
     //
     return (
+      //Add in MyContext to keep track of items in cart
       <MyContext.Provider value={{
         cart: this.state.cart,
         addToCart: this.addToCart
       }}>
+        {/* React router for navigating through pages without server call */}
         <Router>
           {/* <!--Navbar--> */}
           <nav className="navbar navbar-expand-lg navbar-dark primary-color">
