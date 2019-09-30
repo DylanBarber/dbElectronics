@@ -180,5 +180,3 @@ class App extends React.PureComponent {
 }
 
 export default App;
-
-//SELECT products.product_id, products.product_name, pricing.product_price, products.product_type, products.product_description, products.product_image, pricing.release_date FROM products JOIN pricing ON pricing.product_id=products.product_id;

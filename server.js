@@ -51,12 +51,6 @@ function verifyToken(req, res, next) {
   }
 
 }
-//
-
-//Serves React app on these routes
-app.get('/products' || '/' || '/contact', (req, res) => {
-  res.sendFile(path.join(__dirname + '/client/build/index.html'));
-});
 
 //GET route for products. Also has filter built into it. 
 app.get('/api/products', (req, res) => {
@@ -134,19 +128,30 @@ app.post('/api/login', (req, res) => {
   const pass = req.body.password;
   sql.query('SELECT * FROM `users` WHERE `username`=? AND `password`=?', [user, pass], (err, data) => {
     if (data.length === 0) {
-      return res.status(403).send('Username or password is incorrect');
+      return res.send({message: 'Incorrect username or password'});
     }
-    return jwt.sign({ data }, process.env.JWT_KEY, { expiresIn: "60s" }, (err, token) => {
-      if (err) res.status(500).send(err.message);
-      console.log(token);
-      return res.json({ token })
-    })
+    return res.send({message: 'Logged in. Redirecting...'}); 
+    // return jwt.sign({ data }, process.env.JWT_KEY, { expiresIn: "60s" }, (err, token) => {
+    //   if (err) res.status(500).send(err.message);
+    //   console.log(token);
+    //   return res.json({ token })
+    // })
   })
 })
 
+//DELETE test for contact
+app.delete('/api/deletecontact', (req, res) => {
+  console.log(req.body.contact_id)
+  sql.query('DELETE FROM contacts WHERE contact_id=?', [req.body.contact_id], (err, data) => { 
+    if (err) return res.status(500).send(err);
+    res.send({message: `User ${req.body.contact_id} was deleted from the database`})
+  })
+})
 
-
-
+//Catchall react handler
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/client/build/index.html'));
+});
 
 const port = process.env.PORT || 25565;
 

@@ -43,15 +43,18 @@ h2, p {
 }
 
 /* Cart */
-.cartContainer{
+
+.cartContainer {
   min-height: 100vh;
 }
 
 /* Checkout */
+
 .checkoutContainer {
   /* min-height: 100vh; */
   flex: 1;
 }
+
 .checkoutContainer input {
   border-top: 0px;
   border-right: 0px;
@@ -76,12 +79,15 @@ h2, p {
   border-radius: 20px;
   /* margin: 10px; */
 }
+
 .paymentInfo input {
   margin-bottom: 50px;
 }
+
 .paymentInfo select {
   margin-bottom: 30px;
 }
+
 .cardNumber {
   display: flex;
   align-items: center;
@@ -104,7 +110,8 @@ h2, p {
 .expCvv {
   display: flex;
 }
-.expCvv input{
+
+.expCvv input {
   width: 41%;
 }
 
@@ -187,6 +194,7 @@ h2, p {
   align-items: center;
   border-radius: 20px;
 }
+
 .orderDetails {
   overflow: scroll;
   width: 90%;
@@ -196,7 +204,8 @@ h2, p {
   flex-direction: column;
   align-items: center;
 }
-.orderProduct{
+
+.orderProduct {
   width: 100%;
   height: 50px;
   margin: 5px;
@@ -204,25 +213,30 @@ h2, p {
   border-bottom: 4px solid grey;
   display: flex;
 }
+
 .itemName {
   border-right: 1px solid grey;
   padding: 10px;
   margin-bottom: 0px;
 }
+
 .itemPrice {
   border-right: 1px solid grey;
   padding: 10px;
   margin-bottom: 0px;
 }
+
 .itemQty {
   border-right: 1px solid grey;
   padding: 10px;
   margin-bottom: 0px;
 }
+
 .itemTotal {
   padding: 10px;
   margin-bottom: 0px;
 }
+
 .completePurchase {
   margin-top: 25px;
   height: 50px;
@@ -231,39 +245,125 @@ h2, p {
   background-color: #4285f4;
   color: white;
 }
+
 .completePurchase:hover {
   box-shadow: 0px 0px 10px grey;
   filter: brightness(85%);
 }
 
 /* Admin page */
-.adminProductsCard, .adminContactsCard{
+
+.adminProductsCard, .adminContactsCard {
   overflow: scroll;
   margin: 20px;
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+}
+.contactsTable, .productTable {
+  width: 100%; 
 }
 .adminContainer .card {
   min-width: 100%;
 }
+
 .adminContainer {
-  /* display: flex; 
-  justify-content: center;
-  align-items: center; */
   min-height: 100vh;
 }
+
 .adminProductDiv, .adminContactsDiv {
-  display: flex; 
+  display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
+
 .adminProductsTableHead, .adminProductsTableProduct, .adminContactsTableHead, .adminContactsTableContact {
   padding: 5px;
   border-right: 1px solid grey;
   border-bottom: 2px solid grey;
 }
-.adminProductsTableHead, .adminContactsTableHead{
+
+.adminProductsTableHead, .adminContactsTableHead {
   font-weight: bold;
 }
-#adminProductsTableType, #adminContactsTableMessage{
+
+#adminProductsTableType, #adminContactsTableMessage {
   border-right: 0px;
+}
+
+.contactsRow:hover {
+  filter: brightness(85%);
+  background-color: lightgrey;
+}
+
+.selectedRow {
+  background-color: grey;
+}
+
+.deleteContactBtn {
+  margin-top: 25px;
+  height: 50px;
+  width: 90%;
+  border-radius: 10px;
+  background-color: #4285f4;
+  color: white;
+}
+.deleteContactBtn:hover {
+  filter: brightness(85%);
+  box-shadow: 0px 0px 10px grey;
+}
+
+.serverResponseMessage{
+  margin: 15px;
+}
+
+/* Login */
+
+.loginContainer {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loginCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loginUser, .loginPass {
+  width: 90%;
+  margin: 20px;
+  border-top: 0px;
+  border-right: 0px;
+  border-bottom: 2px solid grey;
+  border-left: 0px;
+}
+
+.loginBtn {
+  margin-top: 25px;
+  height: 50px;
+  width: 90%;
+  border-radius: 10px;
+  background-color: #4285f4;
+  color: white;
+}
+
+.loginBtn:hover {
+  box-shadow: 0px 0px 10px grey;
+  filter: brightness(85%);
+}
+
+.goodLoginText {
+  color: green;
+  margin: 15px;
+}
+
+.badLoginText {
+  color: red;
+  margin: 15px;
 }
