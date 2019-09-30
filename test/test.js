@@ -12,7 +12,6 @@ describe('Express server endpoints test', () => {
   })
 });
 
-
 describe('Express server endpoints test', () => {
   it('Checks GET for products', (done) => {
     request(`http://localhost:${port}/api/products`, (err, res, body) => {

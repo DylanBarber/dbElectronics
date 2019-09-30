@@ -61,13 +61,15 @@ app.get('/products' || '/' || '/contact', (req, res) => {
 //GET route for products. Also has filter built into it. 
 app.get('/api/products', (req, res) => {
   if (req.query.type) {
-    sql.query('SELECT * FROM products WHERE product_type=?', [req.query.type], (err, data) => {
+    sql.query('SELECT products.product_id, products.product_name, pricing.product_price, products.product_type, products.product_description, products.product_image, pricing.release_date FROM products JOIN pricing ON pricing.product_id=products.product_id WHERE products.product_type=?'
+    , [req.query.type], (err, data) => {
       if (err) res.send(err);
       res.json(data);
       return
     })
   } else {
-    sql.query('SELECT * FROM products', (err, data, ) => {
+    sql.query('SELECT products.product_id, products.product_name, pricing.product_price, products.product_type, products.product_description, products.product_image, pricing.release_date FROM products JOIN pricing ON pricing.product_id=products.product_id'
+      , (err, data, ) => {
       res.json(data);
     })
   }

@@ -27,7 +27,6 @@ import "./App.css";
 
 //React Context for cart
 import MyContext from './components/Context'
-// const dotenv = require('dotenv').config();
 
 
 
@@ -181,3 +180,5 @@ class App extends React.PureComponent {
 }
 
 export default App;
+
+//SELECT products.product_id, products.product_name, pricing.product_price, products.product_type, products.product_description, products.product_image, pricing.release_date FROM products JOIN pricing ON pricing.product_id=products.product_id;
