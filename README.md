@@ -13,3 +13,7 @@ The invoices and invoice_items tables are purely for example currently until a p
 
 ## Tests
 The test script is held in /test/ and can be ran from the project root with `npm run test`. These tests utilize Mocha and Chai
+
+## Execution
+To run this project in production mode run the command `node server.js` from the root folder. 
+To run this project in development mode run the command `npm start dev` from the root folder. 
