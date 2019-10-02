@@ -85,7 +85,6 @@ app.post('/api/newcontact', (req, res) => {
 
 //DELETE for contact deletion
 app.delete('/api/deletecontact', (req, res) => {
-  console.log(req.body.contact_id)
   sql.query('DELETE FROM contacts WHERE contact_id=?', [req.body.contact_id], (err, data) => {
     if (err) return res.status(500).send(err);
     res.send({ message: `User ${req.body.contact_id} was deleted from the database` })
@@ -94,10 +93,8 @@ app.delete('/api/deletecontact', (req, res) => {
 
 //POST route for purchase
 app.post('/api/purchase', (req, res) => {
-  console.log(req.body)
   res.json({ "message": "Server needs payment authorization API before purchases can be made. Your payment data has not been stored anywhere" });
 })
-
 
 //Catchall react handler
 app.get('*', (req, res) => {
