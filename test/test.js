@@ -20,3 +20,21 @@ describe('Express server endpoints test', () => {
     });
   })
 }); 
+
+describe('Express server endpoints test', () => {
+  it('GETs a specific contact', (done) => {
+    request(`http://localhost:${port}/api/contacts/?id=1`, (err, res, body) => {
+      expect(res.statusCode).to.equal(200)
+      done();
+    });
+  })
+})
+
+describe('Express server endpoints test', () => {
+  it('GETs a specific product type', (done) => {
+    request(`http://localhost:${port}/api/products/?type=computer`, (err, res, body) => {
+      expect(res.statusCode).to.equal(200)
+      done();
+    });
+  })
+})

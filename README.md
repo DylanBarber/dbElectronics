@@ -17,3 +17,7 @@ The test script is held in /test/ and can be ran from the project root with `npm
 ## Execution
 To run this project in production mode run the command `node server.js` from the root folder. 
 To run this project in development mode run the command `npm start dev` from the root folder. 
+
+## Admin authentication
+There is currently no JWT authentication, however it is installed as a module. You may insert your own credentials into the `users` table and log in with those credentials for testing. 
+**NOTE THAT YOU MUST CREATE YOUR OWN SECURE AUTHENTICATION BEFORE PRODUCTION OR REMOVE THE ADMIN PAGE AS THERE IS A SEVERE VULNERABILITY** 
