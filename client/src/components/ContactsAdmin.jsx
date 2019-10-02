@@ -1,3 +1,4 @@
+//Dependencies
 import React from 'react';
 
 class ContactsAdmin extends React.Component {
@@ -41,7 +42,7 @@ class ContactsAdmin extends React.Component {
       })
       const response = await data.json()
       console.log(response)
-      this.setState({deleteContactResponse: response.message, selectedContactId: null})
+      this.setState({ deleteContactResponse: response.message, selectedContactId: null })
       this.fetchAllContacts()
     }
     const contactRowOnClick = (contact_id) => () => {
@@ -128,4 +129,5 @@ class ContactsAdmin extends React.Component {
   }
 }
 
+//Export ContactsAdmin
 export default ContactsAdmin;

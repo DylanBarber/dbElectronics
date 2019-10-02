@@ -1,6 +1,7 @@
+//Dependencies
 import React from "react";
 
-//React Context
+//React Context for cart information
 import MyContext from './Context'
 
 const Product = props => {
@@ -38,4 +39,5 @@ const Product = props => {
   );
 };
 
+//Export Product
 export default Product;

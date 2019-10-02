@@ -2,12 +2,6 @@
 import React from "react";
 import { Slide } from "react-slideshow-image";
 
-// CSS Files
-import "../css/bootstrap.min.css";
-import "../css/mdb.min.css";
-import "../css/style.css";
-import "../css/slide.css";
-
 //Slide images
 const slideImages = [
   "./lib/img/slideImg1.png",
@@ -27,7 +21,7 @@ const properties = {
   }
 };
 
-class Home extends React.PureComponent {
+class Home extends React.Component {
   render() {
     return (
       // {/* <!-- Content --> */}
@@ -65,4 +59,6 @@ dbElectronics is the only electronic components distributor to give customers a 
     );
   }
 }
+
+//Export Home
 export default Home;

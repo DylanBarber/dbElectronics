@@ -12,7 +12,7 @@ const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
-
+//Assign express server to app
 const app = express();
 //user body parser for parsing body information on POST routes
 app.use(bodyParser.json());
@@ -56,16 +56,16 @@ function verifyToken(req, res, next) {
 app.get('/api/products', (req, res) => {
   if (req.query.type) {
     sql.query('SELECT products.product_id, products.product_name, pricing.product_price, products.product_type, products.product_description, products.product_image, pricing.release_date FROM products JOIN pricing ON pricing.product_id=products.product_id WHERE products.product_type=?'
-    , [req.query.type], (err, data) => {
-      if (err) res.send(err);
-      res.json(data);
-      return
-    })
+      , [req.query.type], (err, data) => {
+        if (err) res.send(err);
+        res.json(data);
+        return
+      })
   } else {
     sql.query('SELECT products.product_id, products.product_name, pricing.product_price, products.product_type, products.product_description, products.product_image, pricing.release_date FROM products JOIN pricing ON pricing.product_id=products.product_id'
       , (err, data, ) => {
-      res.json(data);
-    })
+        res.json(data);
+      })
   }
 
 })
@@ -128,9 +128,9 @@ app.post('/api/login', (req, res) => {
   const pass = req.body.password;
   sql.query('SELECT * FROM `users` WHERE `username`=? AND `password`=?', [user, pass], (err, data) => {
     if (data.length === 0) {
-      return res.send({message: 'Incorrect username or password'});
+      return res.send({ message: 'Incorrect username or password' });
     }
-    return res.send({message: 'Logged in. Redirecting...'}); 
+    return res.send({ message: 'Logged in. Redirecting...' });
     // return jwt.sign({ data }, process.env.JWT_KEY, { expiresIn: "60s" }, (err, token) => {
     //   if (err) res.status(500).send(err.message);
     //   console.log(token);
@@ -142,16 +142,16 @@ app.post('/api/login', (req, res) => {
 //DELETE for contact deletion
 app.delete('/api/deletecontact', (req, res) => {
   console.log(req.body.contact_id)
-  sql.query('DELETE FROM contacts WHERE contact_id=?', [req.body.contact_id], (err, data) => { 
+  sql.query('DELETE FROM contacts WHERE contact_id=?', [req.body.contact_id], (err, data) => {
     if (err) return res.status(500).send(err);
-    res.send({message: `User ${req.body.contact_id} was deleted from the database`})
+    res.send({ message: `User ${req.body.contact_id} was deleted from the database` })
   })
 })
 
 //POST route for purchase
 app.post('/api/purchase', (req, res) => {
   console.log(req.body)
-  res.json({"test": "test"});
+  res.json({ "test": "test" });
 })
 
 

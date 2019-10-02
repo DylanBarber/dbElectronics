@@ -1,3 +1,6 @@
+//Dependencies
 import React from 'react';
-const MyContext = React.createContext(); 
+//Create Context
+const MyContext = React.createContext();
+//Export MyContext
 export default MyContext;

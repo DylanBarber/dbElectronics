@@ -1,10 +1,7 @@
 //Dependencies
 import React from "react";
 
-//CSS
-import "../css/contact.css";
-
-class Contact extends React.PureComponent {
+class Contact extends React.Component {
   //Create intitial state with empty values for what will be form values
   state = {
     nameValue: "",
@@ -236,4 +233,6 @@ class Contact extends React.PureComponent {
     );
   }
 }
+
+//Export Contact
 export default Contact;

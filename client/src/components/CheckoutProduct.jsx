@@ -1,4 +1,5 @@
-import React from 'react'; 
+//Dependencies
+import React from 'react';
 
 const CheckoutProduct = props => (
   <tr>
@@ -9,4 +10,5 @@ const CheckoutProduct = props => (
   </tr>
 )
 
+//Export CheckoutProduct
 export default CheckoutProduct;

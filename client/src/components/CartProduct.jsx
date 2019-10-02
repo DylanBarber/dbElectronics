@@ -1,3 +1,4 @@
+//Dependencies
 import React from 'react';
 
 const CartProduct = props => {
@@ -29,4 +30,5 @@ const CartProduct = props => {
   )
 }
 
+//Export CartProduct
 export default CartProduct; 

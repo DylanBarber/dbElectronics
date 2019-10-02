@@ -1,11 +1,10 @@
+//Dependencies
 import React from "react";
-// CSS Files
-import "../css/bootstrap.min.css";
-import "../css/mdb.min.css";
-import "../css/style.css";
 
+//React Context for cart information
 import MyContext from './Context';
 
+//Components
 import CheckoutProduct from './CheckoutProduct'
 
 const Checkout = () => {
@@ -31,7 +30,6 @@ const Checkout = () => {
             body: JSON.stringify(requestBody)
           })
           const response = await data.json()
-          console.log(response)
         }
         return (
           <div className="container checkoutContainer container-bg">
@@ -418,4 +416,5 @@ const Checkout = () => {
   )
 }
 
+//Export Checkout
 export default Checkout;

@@ -6,8 +6,7 @@ import {
   Link,
   NavLink
 } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-solid-svg-icons'
+
 
 //Components
 import ProductsPage from "./components/ProductsPage";
@@ -31,7 +30,7 @@ import MyContext from './components/Context'
 
 
 
-class App extends React.PureComponent {
+class App extends React.Component {
   state = {
     cart: []
   }
@@ -180,4 +179,5 @@ class App extends React.PureComponent {
   }
 }
 
+//Export App
 export default App;

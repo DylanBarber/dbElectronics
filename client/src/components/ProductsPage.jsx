@@ -10,9 +10,7 @@ import "../css/mdb.min.css";
 import "../css/style.css";
 import "../App.css";
 
-
-
-class ProductsPage extends React.PureComponent {
+class ProductsPage extends React.Component {
   state = {
     products: []
   };
@@ -32,6 +30,7 @@ class ProductsPage extends React.PureComponent {
     const data = await fetchData.json();
     this.setState({ products: data })
   }
+  //Sorts all products by price
   sortByPriceHandler = () => {
     function compareByPrice(a, b) {
       const priceA = a.product_price;
@@ -42,6 +41,7 @@ class ProductsPage extends React.PureComponent {
       products: this.state.products.slice().sort(compareByPrice)
     });
   };
+  //Sorts all products by type
   sortByTypeHandler = () => {
     function compareByType(a, b) {
       const typeA = a.product_type;
@@ -59,9 +59,11 @@ class ProductsPage extends React.PureComponent {
       products: this.state.products.slice().sort(compareByType)
     });
   };
+  //Unsorts by calling to API again
   unsortHandler = () => {
     this.fetchAllProducts()();
   };
+  //Unfilters by calling to API again
   unfilterHandler = () => {
     this.fetchAllProducts()();
   };
@@ -145,4 +147,5 @@ class ProductsPage extends React.PureComponent {
   }
 }
 
+//Export ProductsPage
 export default ProductsPage;

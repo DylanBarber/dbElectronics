@@ -1,3 +1,4 @@
+//Dependencies
 import React from 'react';
 import { Redirect } from 'react-router-dom'
 
@@ -58,4 +59,5 @@ class Login extends React.PureComponent {
   }
 }
 
+//Export Login
 export default Login;

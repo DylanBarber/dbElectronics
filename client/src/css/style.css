@@ -1,4 +1,8 @@
+/* Import from Google Fonts */
+
 @import url('https://fonts.googleapis.com/css?family=Geostar&display=swap');
+/* General */
+
 .page-wrapper {
   display: flex;
   flex-direction: column;
@@ -17,18 +21,6 @@ body, html {
   box-shadow: -16px 0px 20px 0px #3e4551, 16px 0px 20px 0px #3e4551;
 }
 
-.productsContainer-bg {
-  background-color: whitesmoke;
-  box-shadow: -16px 0px 20px 0px #3e4551, 16px 0px 20px 0px #3e4551;
-  min-height: 80vh;
-}
-
-.navbar-brand {
-  font-family: 'Geostar';
-  border: 2px solid white;
-  padding: 2px;
-}
-
 h2, p {
   font-family: Montserrat;
 }
@@ -38,8 +30,24 @@ h2, p {
   margin-bottom: 15px;
 }
 
+/* Header */
+
 .sort {
   margin-right: 100px;
+}
+
+.navbar-brand {
+  font-family: 'Geostar';
+  border: 2px solid white;
+  padding: 2px;
+}
+
+/* Products Page */
+
+.productsContainer-bg {
+  background-color: whitesmoke;
+  box-shadow: -16px 0px 20px 0px #3e4551, 16px 0px 20px 0px #3e4551;
+  min-height: 80vh;
 }
 
 /* Home Page */
@@ -354,7 +362,14 @@ h2, p {
   margin: 15px;
 }
 
+/* Contact form */
+
+.contactFormDiv{
+  min-height: 100vh;
+}
+
 /* Footer */
+
 .socialMediaIcon {
-  font-size: 28px; 
+  font-size: 28px;
 }
