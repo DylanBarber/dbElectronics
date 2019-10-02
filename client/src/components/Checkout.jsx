@@ -18,6 +18,21 @@ const Checkout = () => {
             key={index}
           />
         ))
+        const handlePurchase = async () => {
+          const requestBody = {
+            cart: context.cart
+          }
+          const port = process.env.PORT || 25565
+          const data = await fetch(`http://localhost:${port}/api/purchase`, {
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            method: 'POST',
+            body: JSON.stringify(requestBody)
+          })
+          const response = await data.json()
+          console.log(response)
+        }
         return (
           <div className="container checkoutContainer container-bg">
             <div className='row'>
@@ -377,16 +392,20 @@ const Checkout = () => {
                   <h2>Order Info</h2>
                   <div className='tableDiv'>
                     <table className='orderDetails'>
-                      <tr>
-                        <td>Item</td>
-                        <td>Unit Price</td>
-                        <td>Qty.</td>
-                        <td>Total</td>
-                      </tr>
-                      {cartProducts}
+                      <thead>
+                        <tr>
+                          <td>Item</td>
+                          <td>Unit Price</td>
+                          <td>Qty.</td>
+                          <td>Total</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {cartProducts}
+                      </tbody>
                     </table>
                   </div>
-                  <button className='completePurchase'>Complete Purchase</button>
+                  <button onClick={handlePurchase} className='completePurchase'>Complete Purchase</button>
                 </div>
 
               </div>

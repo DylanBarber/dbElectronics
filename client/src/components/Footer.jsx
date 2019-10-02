@@ -1,5 +1,7 @@
 // Dependencies
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebook, faInstagram, faTwitter } from '../../node_modules/@fortawesome/free-brands-svg-icons'
 
 const Footer = () => {
   return (
@@ -97,38 +99,26 @@ const Footer = () => {
       {/* <!-- Footer Links --> */}
 
       {/* <!-- Call to action --> */}
-
       <hr />
       {/* <!-- Social buttons --> */}
       <ul className="list-unstyled list-inline text-center">
         <li className="list-inline-item">
-          <a href="###" className="btn-floating btn-fb mx-1">
-            <i className="fab fa-facebook-f"> </i>
+          <a href='https://www.twitter.com/'>
+            <FontAwesomeIcon className='socialMediaIcon' icon={faTwitter} />
           </a>
         </li>
         <li className="list-inline-item">
-          <a href="###" className="btn-floating btn-tw mx-1">
-            <i className="fab fa-twitter"> </i>
+          <a href='https://www.facebook.com/'>
+            <FontAwesomeIcon className='socialMediaIcon' icon={faInstagram} />
           </a>
         </li>
         <li className="list-inline-item">
-          <a href="###" className="btn-floating btn-gplus mx-1">
-            <i className="fab fa-google-plus-g"> </i>
-          </a>
-        </li>
-        <li className="list-inline-item">
-          <a href="###" className="btn-floating btn-li mx-1">
-            <i className="fab fa-linkedin-in"> </i>
-          </a>
-        </li>
-        <li className="list-inline-item">
-          <a href="###" className="btn-floating btn-dribbble mx-1">
-            <i className="fab fa-dribbble"> </i>
+          <a href='https://www.instagram.com/'>
+            <FontAwesomeIcon className='socialMediaIcon' icon={faFacebook} />
           </a>
         </li>
       </ul>
       {/* <!-- Social buttons --> */}
-
       {/* <!-- Copyright --> */}
       <div className="footer-copyright text-center py-3">
         © 2019 Copyright:

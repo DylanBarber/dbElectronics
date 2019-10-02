@@ -6,7 +6,8 @@ import {
   Link,
   NavLink
 } from "react-router-dom";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-solid-svg-icons'
 
 //Components
 import ProductsPage from "./components/ProductsPage";

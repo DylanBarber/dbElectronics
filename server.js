@@ -139,7 +139,7 @@ app.post('/api/login', (req, res) => {
   })
 })
 
-//DELETE test for contact
+//DELETE for contact deletion
 app.delete('/api/deletecontact', (req, res) => {
   console.log(req.body.contact_id)
   sql.query('DELETE FROM contacts WHERE contact_id=?', [req.body.contact_id], (err, data) => { 
@@ -147,6 +147,13 @@ app.delete('/api/deletecontact', (req, res) => {
     res.send({message: `User ${req.body.contact_id} was deleted from the database`})
   })
 })
+
+//POST route for purchase
+app.post('/api/purchase', (req, res) => {
+  console.log(req.body)
+  res.json({"test": "test"});
+})
+
 
 //Catchall react handler
 app.get('*', (req, res) => {

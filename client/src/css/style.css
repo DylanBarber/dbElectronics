@@ -353,3 +353,8 @@ h2, p {
   color: red;
   margin: 15px;
 }
+
+/* Footer */
+.socialMediaIcon {
+  font-size: 28px; 
+}
