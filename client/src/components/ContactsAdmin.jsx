@@ -44,7 +44,7 @@ class ContactsAdmin extends React.Component {
       this.setState({deleteContactResponse: response.message, selectedContactId: null})
       this.fetchAllContacts()
     }
-    const contactRowOnClick = (contact_id) => (e) => {
+    const contactRowOnClick = (contact_id) => () => {
       this.setState({ selectedContactId: contact_id })
     }
     //Map over products array for displaying on the products table

@@ -32,7 +32,7 @@ class Home extends React.PureComponent {
     return (
       // {/* <!-- Content --> */}
       <div className="page-wrapper">
-        <div className="container container-bg">
+        <div className="container container-bg homeContainer">
           <div className="slide-container">
             <Slide {...properties}>
               <div className="each-slide">
@@ -56,27 +56,9 @@ class Home extends React.PureComponent {
             </u>
           </h2>
           <p className="p-4 homeText">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-            semper, risus sit amet lacinia fringilla, dolor ligula faucibus mi,
-            quis congue mauris mauris vel lacus. Proin suscipit convallis
-            posuere. Suspendisse bibendum metus erat, ac placerat elit imperdiet
-            at. Nunc non dolor nec dolor malesuada aliquet vel eu ipsum. Proin
-            ultrices mauris urna, at maximus velit ultrices sed. Vivamus sed
-            venenatis purus, ut feugiat sem. Nam sit amet tristique tellus, quis
-            faucibus quam. Mauris venenatis justo id nibh euismod ultricies ut
-            vehicula lectus. Integer non justo consectetur, fermentum turpis
-            congue, viverra tortor. Vivamus lobortis, diam in consectetur
-            viverra, arcu urna volutpat nisl, non pellentesque neque nisl et
-            metus. Donec quam mi, tristique non efficitur a, malesuada vitae
-            odio. Nullam feugiat, augue eu lobortis commodo, felis elit volutpat
-            odio, vel semper arcu enim in eros. Nullam mollis sed nibh ut
-            viverra. Vestibulum vehicula, magna eget feugiat venenatis, odio
-            dolor commodo libero, in sodales lacus sem sed tortor. Curabitur
-            posuere ante nec convallis suscipit. Aliquam felis enim, egestas id
-            malesuada non, finibus id massa. Nunc hendrerit purus arcu, at
-            commodo odio ultrices eget. Integer sit amet semper lorem. Phasellus
-            consectetur purus id eros suscipit, nec malesuada nibh posuere.
-            Suspendisse bibendum vulputate mattis.
+          dbElectronics has been a leading electronic components distributor for over 45 years. We've helped millions of customers from businesses to educational institutions to hobbyists and along the way we're proud to have built a solid reputation for great prices, great selection, and a great source for hard-to-find electronic components. dbElectronics' buying expertise allows even the smallest company or individual to enjoy the same competitive pricing edge typically reserved for the highest volume buyers.
+
+dbElectronics is the only electronic components distributor to give customers a true choice. dbElectronics offers more than 30,000 of the industry's most popular name brand components but what sets us apart is a large selection of in-stock house and generic brands that are typically priced 15% to 25% less, and an ever changing selection of Special Buys with a savings of 30% to 50% and more. dbElectronics is the kind of company that you want to work with.
           </p>
         </div>
       </div>
