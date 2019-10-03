@@ -27,6 +27,28 @@ sql.connect();
 //Load in React
 app.use(express.static(path.join(__dirname, 'client/build')))
 
+//POST route for purchase
+app.post('/api/purchase', (req, res) => {
+  res.json({ "message": "Server needs payment authorization API before purchases can be made. Your payment data has not been stored anywhere" });
+})
+
+//POST route for adding a new contact (Used on form submission)
+app.post('/api/newcontact', (req, res) => {
+  const name = req.body.name;
+  const email = req.body.email;
+  const subject = req.body.subject;
+  const message = req.body.message;
+  if (name && email && subject && message) {
+    sql.query("INSERT INTO `contacts` (contact_name, contact_email, subject, message) VALUES (?, ?, ?, ?)", [name, email, subject, message], (err) => {
+      if (err) throw err;
+      res.json({ name: name, email: email, subject: subject, message: message });
+      return;
+    });
+  } else {
+    res.send('You are missing a field. Syntax to add a user is /api/newcontact/?name=NAME&address=ADDRESS&city=CITY&country=COUNTRY');
+  }
+});
+
 //GET route for products. Also has filter built into it. 
 app.get('/api/products', (req, res) => {
   //If a product type is supplied, send only that product type
@@ -61,27 +83,22 @@ app.get('/api/contacts', (req, res) => {
     //Else send all contacts
   } else {
     sql.query('SELECT * FROM `contacts`', (err, data) => {
+      if (err) res.status(500).send(err);
       res.json(data);
     })
   }
 })
 
-//POST route for adding a new contact (Used on form submission)
-app.post('/api/newcontact', (req, res) => {
-  const name = req.body.name;
-  const email = req.body.email;
-  const subject = req.body.subject;
-  const message = req.body.message;
-  if (name && email && subject && message) {
-    sql.query("INSERT INTO `contacts` (contact_name, contact_email, subject, message) VALUES (?, ?, ?, ?)", [name, email, subject, message], (err) => {
-      if (err) throw err;
-      res.json({ name: name, email: email, subject: subject, message: message });
-      return;
-    });
-  } else {
-    res.send('You are missing a field. Syntax to add a user is /api/newcontact/?name=NAME&address=ADDRESS&city=CITY&country=COUNTRY');
+//GET route for invoices
+app.get('/api/productinvoice', (req, res) => {
+  if (req.query.id) {
+    sql.query('SELECT * FROM invoices WHERE id=?', [req.query.id], (err, data) => {
+      if (err) return res.status(500).send(err);
+      return res.json(data);
+    })
   }
-});
+  res.send('Please supply an invoice ID');
+})
 
 //DELETE for contact deletion
 app.delete('/api/deletecontact', (req, res) => {
@@ -89,11 +106,6 @@ app.delete('/api/deletecontact', (req, res) => {
     if (err) return res.status(500).send(err);
     res.send({ message: `User ${req.body.contact_id} was deleted from the database` })
   })
-})
-
-//POST route for purchase
-app.post('/api/purchase', (req, res) => {
-  res.json({ "message": "Server needs payment authorization API before purchases can be made. Your payment data has not been stored anywhere" });
 })
 
 //Catchall react handler
