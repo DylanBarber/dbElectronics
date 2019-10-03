@@ -59,7 +59,7 @@ app.get('/api/products', (req, res) => {
         res.json(data);
         return
       })
-      //Else send all products
+    //Else send all products
   } else {
     sql.query('SELECT products.product_id, products.product_name, pricing.product_price, products.product_type, products.product_description, products.product_image, pricing.release_date FROM products JOIN pricing ON pricing.product_id=products.product_id'
       , (err, data, ) => {
@@ -94,11 +94,41 @@ app.get('/api/productinvoice', (req, res) => {
   if (req.query.id) {
     sql.query('SELECT * FROM invoices WHERE id=?', [req.query.id], (err, data) => {
       if (err) return res.status(500).send(err);
+      if (data.length === 0) {
+        return res.status(404).send(`Invoice ${req.query.id} not found`);
+      }
       return res.json(data);
     })
   }
   res.send('Please supply an invoice ID');
 })
+
+app.put("/api/updatecontact", (req, res) => {
+  sql.query("SELECT * FROM contacts WHERE contact_id=?", [req.body.id], (err, rows) => {
+    if (err) res.status(500).send(err);
+    if (rows.length !== 0) {
+      const contact = rows[0];
+      if (req.body.contact_name) {
+        contact.contact_name = req.body.contact_name;
+      }
+      if (req.body.contact_email) {
+        contact.contact_email = req.body.contact_email;
+      }
+      if (req.body.subject) {
+        contact.subject = req.body.subject;
+      }
+      if (req.body.message) {
+        contact.message = req.body.message;
+      }
+      sql.query("UPDATE contacts SET contact_name = ?, contact_email = ?, subject = ?, message = ? WHERE contact_id = ?", [contact.contact_name, contact.contact_email, contact.subject, contact.message], (err, data) => {
+        if (err) res.status(500).send(err);
+        res.send(contact);
+      });
+    } else {
+      return res.status(404).send("Contact not found");
+    }
+  });
+});
 
 //DELETE for contact deletion
 app.delete('/api/deletecontact', (req, res) => {
