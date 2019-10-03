@@ -120,7 +120,7 @@ app.put("/api/updatecontact", (req, res) => {
       if (req.body.message) {
         contact.message = req.body.message;
       }
-      sql.query("UPDATE contacts SET contact_name = ?, contact_email = ?, subject = ?, message = ? WHERE contact_id = ?", [contact.contact_name, contact.contact_email, contact.subject, contact.message], (err, data) => {
+      sql.query("UPDATE contacts SET contact_name = ?, contact_email = ?, subject = ?, message = ? WHERE contact_id = ?", [contact.contact_name, contact.contact_email, contact.subject, contact.message, req.body.id], (err, data) => {
         if (err) res.status(500).send(err);
         res.send(contact);
       });
