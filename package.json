@@ -27,7 +27,7 @@
     "chai": "^4.2.0",
     "concurrently": "^4.1.2",
     "cors": "^2.8.5",
-    "mocha": "^6.2.0"
+    "mocha": "^10.2.0"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
